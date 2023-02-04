@@ -1,11 +1,9 @@
 const circle = document.getElementsByClassName("point__progress__circle");
-const circleBox = document.querySelector(".point__progress__ring");
+
 
 if (circle) {
-    for(let i = 0; i < circle.length; i++) {
-
-    
-  
+  for (let i = 0; i < circle.length; i++) {
+    const circleBox = document.querySelector(`.point__progress__ring__${i + 1}`);
     const radius = circle[i].r.baseVal.value;
     const circumference = radius * 2 * Math.PI;
 
@@ -32,7 +30,6 @@ if (circle) {
 
     const observer = new IntersectionObserver(handleIntersection);
 
-    observer.observe(circleBox[i]);
-  
-}
+    observer.observe(circleBox);
+  }
 }
