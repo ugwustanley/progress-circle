@@ -1,0 +1,63 @@
+html,
+body {
+
+  font-family: "Poppins", sans-serif;
+ 
+}
+.points {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.point {
+  padding: 0 0.01rem;
+  max-width: 250px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.point__heading {
+  text-align: center;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+.point__description {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  line-height: 1.2;
+  color: #444;
+}
+.point__progress {
+  height: 180px;
+  position: relative;
+}
+.point__progress__percentage {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  z-index: 20;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: teal;
+}
+.point__progress__ring {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.point__progress__circle,
+.point__progress__circle__bg {
+  margin: auto;
+  transition: 1s ease-in stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  position: relative;
+  background: pink;
+}
