@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,14 +14,90 @@
     <title>Progress</title>
   </head>
   <body>
+    <style>
+      html,
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .points {
+        display: flex;
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+
+      @media (max-width: 1100px) {
+        .points {
+          flex-wrap: wrap;
+        }
+      }
+
+      .point {
+        padding: 0 0.5rem;
+        max-width: 250px;
+        margin: auto;
+        margin-top: 2rem;
+      }
+
+      .point__heading {
+        text-align: center;
+        margin: 0;
+        font-size: 1.3rem;
+        font-weight: normal;
+      }
+      .point__description {
+        text-align: center;
+        font-size: 0.85rem;
+        margin-top: 0.3rem;
+        line-height: 1.5;
+        color: #444;
+      }
+      .point__progress {
+        height: 180px;
+        position: relative;
+      }
+      .point__progress__percentage {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        z-index: 20;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: teal;
+      }
+      .point__progress__ring {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+
+      .point__progress__circle,
+      .point__progress__circle__bg {
+        margin: auto;
+        transition: 1s ease-in stroke-dashoffset;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+        position: relative;
+        background: pink;
+      }
+    </style>
     <div class="points">
       <div class="point">
         <div class="point__progress">
-            <h2 class="point__progress__percentage">100%</h2>
-          <svg class="point__progress__ring point__progress__ring__1" width="180" height="180">
+          <h2 style="color: #12172b" class="point__progress__percentage">
+            100%
+          </h2>
+          <svg
+            class="point__progress__ring point__progress__ring__1"
+            width="180"
+            height="180"
+          >
             <circle
               class="point__progress__circle"
-              stroke="teal"
+              stroke="#12172b"
               stroke-width="6"
               stroke-linecap="round"
               fill="transparent"
@@ -38,14 +114,19 @@
         </p>
       </div>
 
-
       <div class="point">
         <div class="point__progress">
-            <h2 class="point__progress__percentage">100%</h2>
-          <svg class="point__progress__ring point__progress__ring__2" width="180" height="180">
+          <h2 style="color: #28f1ff" class="point__progress__percentage">
+            100%
+          </h2>
+          <svg
+            class="point__progress__ring point__progress__ring__2"
+            width="180"
+            height="180"
+          >
             <circle
               class="point__progress__circle"
-              stroke="teal"
+              stroke="#28f1ff"
               stroke-width="6"
               stroke-linecap="round"
               fill="transparent"
@@ -55,21 +136,26 @@
             />
           </svg>
         </div>
-        <h3 class="point__heading">boost growth</h3>
+        <h3 class="point__heading">save time</h3>
         <p class="point__description">
-          Grow your social media presence, reputation management and website
-          traffic
+          Safe time and automate your processes, whilst you can focus on more
+          important work
         </p>
       </div>
 
-
       <div class="point">
         <div class="point__progress">
-            <h2 class="point__progress__percentage">100%</h2>
-          <svg class="point__progress__ring point__progress__ring__3" width="180" height="180">
+          <h2 style="color: #6a36ff" class="point__progress__percentage">
+            100%
+          </h2>
+          <svg
+            class="point__progress__ring point__progress__ring__3"
+            width="180"
+            height="180"
+          >
             <circle
               class="point__progress__circle"
-              stroke="teal"
+              stroke="#6a36ff"
               stroke-width="6"
               stroke-linecap="round"
               fill="transparent"
@@ -79,21 +165,25 @@
             />
           </svg>
         </div>
-        <h3 class="point__heading">boost growth</h3>
+        <h3 class="point__heading">improve relationship</h3>
         <p class="point__description">
-          Grow your social media presence, reputation management and website
-          traffic
+          Engage with your Customers and drive revenue and sales
         </p>
       </div>
 
-
       <div class="point">
         <div class="point__progress">
-            <h2 class="point__progress__percentage">100%</h2>
-          <svg class="point__progress__ring point__progress__ring__4" width="180" height="180">
+          <h2 style="color: #02adf0" class="point__progress__percentage">
+            100%
+          </h2>
+          <svg
+            class="point__progress__ring point__progress__ring__4"
+            width="180"
+            height="180"
+          >
             <circle
               class="point__progress__circle"
-              stroke="teal"
+              stroke="#02adf0"
               stroke-width="6"
               stroke-linecap="round"
               fill="transparent"
@@ -103,14 +193,52 @@
             />
           </svg>
         </div>
-        <h3 class="point__heading">boost growth</h3>
+        <h3 class="point__heading">more clients</h3>
         <p class="point__description">
-          Grow your social media presence, reputation management and website
-          traffic
+          Acquisite new clients on autopolit to fill the free spots in your
+          calender
         </p>
       </div>
     </div>
   </body>
+  <script>
+    const circle = document.getElementsByClassName("point__progress__circle");
 
-  <script src="./app.js"></script>
+    if (circle) {
+      for (let i = 0; i < circle.length; i++) {
+        const circleBox = document.querySelector(
+          `.point__progress__ring__${i + 1}`
+        );
+        const radius = circle[i].r.baseVal.value;
+        const circumference = radius * 2 * Math.PI;
+
+        circle[i].style.strokeDasharray = `${circumference} ${circumference}`;
+        circle[i].style.strokeDashoffset = `${circumference}`;
+
+        function setProgress(percent) {
+          const offset = circumference - (percent / 100) * circumference;
+          circle[i].style.strokeDashoffset = offset;
+        }
+
+        //set initial progress value to zero
+        setProgress(0);
+
+        //use intersection observer to detect when in view
+        function handleIntersection(entries) {
+          entries.map((entry) => {
+            if (entry.isIntersecting) {
+              setProgress(100);
+              observer.unobserve(entry.target);
+            }
+          });
+        }
+
+        const observer = new IntersectionObserver(handleIntersection);
+
+        observer.observe(circleBox);
+      }
+    }
+  </script>
+
+  <!-- <script src="./app.js"></script> -->
 </html>

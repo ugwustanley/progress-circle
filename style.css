@@ -1,19 +1,24 @@
 html,
 body {
-
   font-family: "Poppins", sans-serif;
- 
 }
 .points {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   max-width: 1100px;
   margin: 0 auto;
+  padding:2rem 1rem;
+}
+
+@media (max-width: 1100px) {
+  .points {
+    flex-wrap: wrap;
+  }
 }
 
 .point {
-  padding: 0 0.01rem;
+  padding: 0 0.5rem;
   max-width: 250px;
   margin: auto;
   margin-top: 2rem;
@@ -27,9 +32,9 @@ body {
 }
 .point__description {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin-top: 0.3rem;
-  line-height: 1.2;
+  line-height: 1.5;
   color: #444;
 }
 .point__progress {
